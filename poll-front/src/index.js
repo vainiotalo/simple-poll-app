@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Poll from './Poll';
+import App from './App';
 
 ReactDOM.render(
-    <Poll />,
+    <App />,
     document.getElementById('root')
 )
