@@ -1,14 +1,57 @@
-import React from 'react'
+import React, { Component } from 'react'
+import { Link, Redirect } from 'react-router-dom'
 
-const Poll = ({ poll }) => {
-    if(poll === undefined){ //allows page reload when user is on poll page
-        return null
+class Poll extends Component{
+    constructor(props){
+        super(props)
+        this.state = { selectedOption: '', selectedIndex: 0, redirect: false }
     }
-    return(
-        <div>
-            <h2>{poll.question}</h2>
-        </div>
-    )
+
+    updateValue = (event) => {
+        this.setState({
+            selectedOption: event.target.value,
+            selectedIndex: event.target.id
+        })
+    }
+
+    saveAnswer = (event) => {
+        event.preventDefault()
+        this.props.onAnswer(this.props.poll, this.state.selectedIndex)
+        this.setState({ redirect: true })
+    }
+
+    render(){
+        const poll = this.props.poll
+        if(poll === undefined){ return null } // allows page reload when user is on poll page
+        if(this.state.redirect) return <Redirect to={`/${poll.id}/r`} />;
+        else return(
+            <div>
+                <Link to="/"><button>back</button></Link>
+                <form onSubmit={this.saveAnswer}>
+                    <h2>{poll.question}</h2>
+                    <table>
+                        <tbody>
+                            {poll.options.map((option, index) =>
+                            <tr key={index}>
+                                <td>
+                                    <label>
+                                        <input type="radio" value={option} id={index}
+                                                checked={this.state.selectedOption === option}
+                                                onChange={this.updateValue} />
+                                        {`  ${option}` }
+                                    </label>
+                                </td>
+                            </tr>)
+                            }
+                        </tbody>
+                    </table>
+                    <br></br>
+                    <button type="submit"><strong>Answer!</strong></button>
+                    <Link to={`/${poll.id}/r`}><button>Results</button></Link>
+                </form>
+            </div>
+        )
+    }
 }
 
 export default Poll

@@ -3,14 +3,6 @@ import { Link } from 'react-router-dom';
 import './PollDirectory.css'
 
 class PollDirectory extends Component{
-    constructor(props){
-        super(props)
-        this.deletePoll = this.deletePoll.bind(this)
-    }
-
-    deletePoll(event){
-        this.props.onDelete(event)
-    }
 
     render(){
         return(
@@ -22,7 +14,7 @@ class PollDirectory extends Component{
                             {this.props.polls.map(poll =>
                                 <tr key={poll.id + ''}>
                                     <td><Link to={`/${poll.id}`}>{poll.question}</Link></td>
-                                    <td><button onClick={this.deletePoll} id={poll.id}>delete</button></td>
+                                    <td><button onClick={this.props.onDelete} id={poll.id}>delete</button></td>
                             </tr>)
                             }
                         </tbody>

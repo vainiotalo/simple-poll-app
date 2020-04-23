@@ -3,11 +3,10 @@ import { Route, Switch, useRouteMatch } from 'react-router-dom';
 import pollService from './services/polls'
 import Main from './containers/Main'
 import Poll from './components/Poll'
+import PollResults from './components/PollResults'
 
 const App = () => {
-    const [polls, setPolls] = useState([
-        { question: '', options: ['',''] }
-    ])
+    const [polls, setPolls] = useState([])
 
     useEffect(() => {
         pollService
@@ -21,21 +20,41 @@ const App = () => {
         setPolls(polls.concat(pollObject))
     }
 
-    const removePoll = (id) => {
-        setPolls(polls.filter(poll => poll.id !== Number(id)))
+    const removePoll = (event) => {
+        let id = JSON.stringify([event.target.id])
+        id = id.substring(2, id.length-2)
+
+        if(window.confirm('Are you sure you want to delete this poll?')){
+            pollService
+                .remove(id)
+                .then(response => {
+                    setPolls(polls.filter(poll => poll.id !== Number(id)))
+                })
+        }
+    }
+
+    const incrementCount = (poll, index) => {
+        let currentCount = poll.answerCount
+        currentCount[Number(index)] += 1
+        const newCount = { ...poll, answerCount: currentCount }
+
+        pollService
+            .update(newCount, poll.id)
+            .then(response => {
+                    setPolls(polls.map(p => p !== poll ? p : newCount))
+        })
     }
 
     const match = useRouteMatch('/:id')
     let poll = match
         ? polls.find(poll => poll.id === Number(match.params.id))
-        : { question: '', options: ['',''] }
+        : null
 
     return(
         <Switch>
-            <Route path="/:id/r">Hello World</Route>
-            <Route path="/:id"><Poll poll={poll}/></Route>
-            <Route path="/"><Main polls={polls}
-                                onUpdate={updatePolls} onDelete={removePoll}/></Route>
+            <Route path="/:id/r"><PollResults poll={poll} /></Route>
+            <Route path="/:id"><Poll poll={poll} onAnswer={incrementCount}/></Route>
+            <Route path="/"><Main polls={polls} onSubmit={updatePolls} onDelete={removePoll}/></Route>
         </Switch>
     )
 }

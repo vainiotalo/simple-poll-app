@@ -6,15 +6,10 @@ import pollService from '../services/polls'
 class PollMaker extends React.Component{
     constructor(props){
         super(props)
-        this.updatePolls = this.updatePolls.bind(this)
         this.state = {
             question: '',
             options: ['','']
         }
-    }
-
-    updatePolls(pollObject){
-        this.props.onSubmit(pollObject)
     }
 
     generateId() {
@@ -25,8 +20,8 @@ class PollMaker extends React.Component{
 
     addQuestion = (event) => {
         event.preventDefault()
-
         const optionsFiltered = this.state.options.filter(option => option !== '')
+        const counterInit = optionsFiltered.map(option => option = 0)
         const optionsSize = optionsFiltered.length
         const optionsCheck = Boolean(optionsSize < 2                                       // Check minimum amount of options
                                     || [...new Set(optionsFiltered)].length < optionsSize) // Check for duplicates
@@ -39,7 +34,8 @@ class PollMaker extends React.Component{
         const pollObject = {
             id: this.generateId(),
             question: this.state.question,
-            options: optionsFiltered
+            options: optionsFiltered,
+            answerCount: counterInit
         }
         
         switch(this.state.question){
@@ -57,7 +53,7 @@ class PollMaker extends React.Component{
                         pollService
                             .create(pollObject)
                             .then(response => {
-                                this.updatePolls(response.data)
+                                this.props.onSubmit(response.data)
                                 resetState()
                             })  
                     }   
