@@ -1,42 +1,28 @@
-import React from 'react'
+import React, { Component } from 'react'
 import PollMaker from '../components/PollMaker'
 import PollDirectory from '../components/PollDirectory'
 import pollService from '../services/polls'
 import './Main.css'
 
-class Main extends React.Component{
+class Main extends Component{
     constructor(props){
         super(props)
         this.updatePollDirectory = this.updatePollDirectory.bind(this)
         this.removePoll = this.removePoll.bind(this)
-        this.state = { polls: [] }
-    }
-
-    componentDidMount(){
-        pollService
-            .getAll()
-            .then(response => {
-                this.setState({ polls: response.data })
-        })
     }
 
     updatePollDirectory(pollObject){
-        this.setState({
-            polls: this.state.polls.concat(pollObject) 
-        })
+        this.props.onUpdate(pollObject)
     }
 
-    removePoll = (event) =>{
-        console.log([event.target.id])
+    removePoll = (event) => {
         let id = JSON.stringify([event.target.id])
         id = id.substring(2, id.length-2)
 
         pollService
             .remove(id)
             .then(response => {
-                this.setState({
-                    polls: this.state.polls.filter(poll => poll.id !== Number(id))
-                })
+                this.props.onDelete(id)
             })
     }
     
@@ -46,8 +32,8 @@ class Main extends React.Component{
                 <div id="pollmaker">
                     <PollMaker onSubmit={this.updatePollDirectory}/>
                 </div>
-                <div id="catalog">
-                    <PollDirectory polls={this.state.polls} onDelete={this.removePoll}/>
+                <div id="directory">
+                    <PollDirectory polls={this.props.polls} onDelete={this.removePoll}/>
                 </div>
             </div>
         )

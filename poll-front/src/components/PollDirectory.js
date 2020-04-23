@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import { BrowserRouter as Router, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './PollDirectory.css'
 
 class PollDirectory extends Component{
@@ -15,21 +15,19 @@ class PollDirectory extends Component{
     render(){
         return(
             <div>
-            <Router>
                 <div>
                     <h2>Open polls:</h2>
                     <table>
                         <tbody>
                             {this.props.polls.map(poll =>
                                 <tr key={poll.id + ''}>
-                                    <td><Link to={`/polls/${poll.id}`}>{poll.question}</Link></td>
+                                    <td><Link to={`/${poll.id}`}>{poll.question}</Link></td>
                                     <td><button onClick={this.deletePoll} id={poll.id}>delete</button></td>
                             </tr>)
                             }
                         </tbody>
                     </table>
                 </div>
-            </Router>
             </div>
         )
     }
