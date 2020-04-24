@@ -22,13 +22,14 @@ class Poll extends Component{
 
     render(){
         const poll = this.props.poll
+        const smiley = <span role="img" aria-label="smiley">&#128578;</span>
         if(poll === undefined){ return null } // allows page reload when user is on poll page
         if(this.state.redirect) return <Redirect to={`/${poll.id}/r`} />;
         else return(
-            <div>
+            <div className="poll">
                 <Link to="/"><button>back</button></Link>
                 <form onSubmit={this.saveAnswer}>
-                    <h2>{poll.question}</h2>
+                    <h2>{poll.question}{smiley}</h2>
                     <table>
                         <tbody>
                             {poll.options.map((option, index) =>

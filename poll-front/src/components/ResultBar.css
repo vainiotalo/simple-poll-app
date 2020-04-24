@@ -1,0 +1,14 @@
+.result-bar {
+    position: relative;
+    height: 20px;
+    width: 350px;
+    border-radius: 50px;
+    border: 2px solid #000000
+}
+
+.filler {
+    background: #FFC30B;
+    height: 100%;
+    border-radius: inherit;
+    transition: width .2s ease-in;
+}

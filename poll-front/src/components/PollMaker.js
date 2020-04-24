@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { Component } from 'react';
 import update from 'immutability-helper';
 import PollForm from './PollForm'
 import pollService from '../services/polls'
 
-class PollMaker extends React.Component{
+class PollMaker extends Component{
     constructor(props){
         super(props)
         this.state = {
@@ -22,9 +22,8 @@ class PollMaker extends React.Component{
         event.preventDefault()
         const optionsFiltered = this.state.options.filter(option => option !== '')
         const counterInit = optionsFiltered.map(option => option = 0)
-        const optionsSize = optionsFiltered.length
-        const optionsCheck = Boolean(optionsSize < 2                                       // Check minimum amount of options
-                                    || [...new Set(optionsFiltered)].length < optionsSize) // Check for duplicates
+        const optionsCheck = Boolean(optionsFiltered.length < 2                                       // Check minimum amount of options
+                                    || [...new Set(optionsFiltered)].length < optionsFiltered.length) // Check for duplicates
         const resetState = () => {
             this.setState({
                 question: '',
@@ -85,8 +84,10 @@ class PollMaker extends React.Component{
 
     render() {
         return (
-           <PollForm handleSubmit={this.addQuestion} handleChange={this.handleQuestion}
-                        handleArray={this.handleOptions} inputObject={this.state} />
+            <div className="poll-maker">
+                <PollForm handleSubmit={this.addQuestion} handleChange={this.handleQuestion}
+                                    handleArray={this.handleOptions} inputObject={this.state} />
+            </div>
         )
     }
 }

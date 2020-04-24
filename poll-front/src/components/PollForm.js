@@ -13,8 +13,8 @@ const PollForm = ({ handleSubmit, handleChange, handleArray, inputObject }) => {
                     Array.from(inputObject.options).map((option, index) => {
                         return(
                             <div key={index}>
-                                <input name="options" value={option} placeholder={`Option ${index+1}`} onChange={(e) => 
-                                                                        handleArray(e, index)}/>
+                                <input name="options" value={option} placeholder={`Option ${index+1}`}
+                                                                onChange={(e) => handleArray(e, index)}/>
                             </div>
                         )
                     })

@@ -6,7 +6,7 @@ import './Main.css'
 class Main extends Component{
     render(){
         return(
-            <div id="container">
+            <div className="main" id="container">
                 <div id="pollmaker">
                     <PollMaker onSubmit={this.props.onSubmit}/>
                 </div>
