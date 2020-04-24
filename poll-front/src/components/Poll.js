@@ -28,7 +28,7 @@ class Poll extends Component{
         else return(
             <div className="poll">
                 <Link to="/"><button>back</button></Link>
-                <form onSubmit={this.saveAnswer}>
+                <form method="POST" action={`/api/polls/${poll.id}`} onSubmit={this.saveAnswer}>
                     <h2>{poll.question}{smiley}</h2>
                     <table>
                         <tbody>
