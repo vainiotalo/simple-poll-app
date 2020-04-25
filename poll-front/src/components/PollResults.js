@@ -9,7 +9,11 @@ const PollResults = ({ poll }) => {
     }
 
     const calcPercentage = (count) => {
-        return (count / poll.answerCount.reduce((pv, cv) => pv + cv, 0))*100
+        if(count === 0 || count === undefined){
+            return 0
+        } else {
+            return (count / poll.answerCount.reduce((pv, cv) => pv + cv, 0))*100
+        }
     }
 
     const smiley = <span role="img" aria-label="smiley">&#128578;</span>
