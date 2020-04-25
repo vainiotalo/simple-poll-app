@@ -8,7 +8,7 @@ const url = process.env.MONGODB_URI
 
 mongoose.connect(url)
 
-const Poll = mongoose.model('Poll', {   //poll schema
+const Poll = mongoose.model('Poll', {   // poll schema
     question: String,
     options: Array,
     answerCount: Array

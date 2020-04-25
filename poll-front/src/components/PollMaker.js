@@ -12,12 +12,6 @@ class PollMaker extends Component{
         }
     }
 
-    generateId() {
-        const min = Math.ceil(1);
-        const max = Math.floor(10000);
-        return Math.floor(Math.random() * (max - min)) + min;
-    }
-
     addQuestion = (event) => {
         event.preventDefault()
         const optionsFiltered = this.state.options.filter(option => option !== '')
@@ -31,7 +25,6 @@ class PollMaker extends Component{
             })
         }
         const pollObject = {
-            id: this.generateId(),
             question: this.state.question,
             options: optionsFiltered,
             answerCount: counterInit
