@@ -40,5 +40,4 @@ Back end cannot be ran without the local `.env` variable. Code can be inspected 
 
 ### Tasks to be done
 
-- Implement CSS styling (app is ugly) 
-- Fix bug that occurs on results page when the poll hasn't been answered yet
+- Implement CSS styling (app is ugly)
