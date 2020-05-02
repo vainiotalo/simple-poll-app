@@ -1,5 +1,5 @@
 import React from 'react'
-import './ResultBar.css'
+import '../styles/ResultBar.css'
 
 const ResultBar = ({ percentage }) => {
     return(

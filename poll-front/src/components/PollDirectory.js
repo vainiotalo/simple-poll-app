@@ -1,6 +1,6 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
-import './PollDirectory.css'
+import { Link } from 'react-router-dom'
+import '../styles/PollDirectory.css'
 
 const PollDirectory = ({ polls, onDelete }) => {
     return(

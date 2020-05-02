@@ -1,0 +1,26 @@
+.main {
+    display: flex;
+    min-height: 100vh;
+    flex: 1;
+    justify-content: center;
+    align-content: center;
+    background-color: rgb(80, 74, 74);
+}
+
+#pollmaker-background {
+    flex: 0.4;
+    padding-right: 8%;
+    margin-top: 10%;
+    justify-content: center;
+}
+
+#pollmaker {
+    width: 100%;
+    padding-left: 12%;
+    padding-right: 12%;
+    padding-top: 10%;
+    justify-content: center;
+    background-color: rgb(255, 254, 235);
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.500);
+}
+

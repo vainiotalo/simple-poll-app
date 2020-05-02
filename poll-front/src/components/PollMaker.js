@@ -78,8 +78,12 @@ class PollMaker extends Component{
     render() {
         return (
             <div className="poll-maker">
-                <PollForm handleSubmit={this.addQuestion} handleChange={this.handleQuestion}
-                                    handleArray={this.handleOptions} inputObject={this.state} />
+                <PollForm
+                handleSubmit={this.addQuestion}
+                handleChange={this.handleQuestion}
+                handleArray={this.handleOptions} 
+                inputObject={this.state}
+                />
             </div>
         )
     }

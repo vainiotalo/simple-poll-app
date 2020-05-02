@@ -1,0 +1,16 @@
+#pollform {
+    background-color: rgb(255, 254, 235);
+}
+
+#input-field {
+    width: 100%;
+    font-size: 30px;
+    background-color: rgb(255, 254, 235);
+    border: none;
+    border-bottom: 1px solid black;
+    line-height: 50px;
+}
+
+#form-button {
+    font-size: 30px;
+}

@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react'
 import { Route, Switch, Redirect, useRouteMatch } from 'react-router-dom';
 import pollService from './services/polls'
 import Main from './containers/Main'
+import Header from './components/Header'
+import PollDirectory from './components/PollDirectory'
 import Poll from './components/Poll'
 import PollResults from './components/PollResults'
 
@@ -51,12 +53,16 @@ const App = () => {
         : null
 
     return(
-        <Switch>
-            <Route path="/:id/r"><PollResults poll={poll} /></Route>
-            <Route path="/:id"><Poll poll={poll} onAnswer={incrementCount}/></Route>
-            <Route path="/"><Main polls={polls} onSubmit={updatePolls} onDelete={removePoll}/></Route>
-            <Route render={() => <Redirect to="/" />} />
-        </Switch>
+        <>
+        <Header />
+            <Switch>
+                <Route path="/polls/:id/r"><PollResults poll={poll} /></Route>
+                <Route path="/polls/:id"><Poll poll={poll} onAnswer={incrementCount}/></Route>
+                <Route path="/polls"><PollDirectory polls={polls} onDelete={removePoll}/></Route>
+                <Route path="/"><Main polls={polls} onSubmit={updatePolls}/> </Route>
+                <Route render={() => <Redirect to="/" />} />
+            </Switch>
+        </>
     )
 }
 

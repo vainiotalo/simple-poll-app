@@ -1,17 +1,16 @@
 import React, { Component } from 'react'
 import PollMaker from '../components/PollMaker'
-import PollDirectory from '../components/PollDirectory'
-import './Main.css'
+import '../styles/Main.css'
 
 class Main extends Component{
+
     render(){
         return(
-            <div className="main" id="container">
-                <div id="pollmaker">
-                    <PollMaker onSubmit={this.props.onSubmit}/>
-                </div>
-                <div id="directory">
-                    <PollDirectory polls={this.props.polls} onDelete={this.props.onDelete}/>
+            <div className="main">
+                <div id="pollmaker-background">
+                    <div id="pollmaker">
+                        <PollMaker onSubmit={this.props.onSubmit}/>
+                    </div>
                 </div>
             </div>
         )

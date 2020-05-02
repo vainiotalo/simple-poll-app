@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import ResultBar from './ResultBar'
-import './PollResults.css'
+import '../styles/PollResults.css'
 
 const PollResults = ({ poll }) => {
     if(poll ===  undefined){        // allows page reload
@@ -20,7 +20,7 @@ const PollResults = ({ poll }) => {
 
     return(
         <div className="poll-results">
-            <Link to={`/${poll.id}/`}><button>back</button></Link>
+            <Link to={`/polls/${poll.id}/`}><button>back</button></Link>
                 <h2>{poll.question}{smiley}</h2>
                 <table id="results">
                     <tbody>
