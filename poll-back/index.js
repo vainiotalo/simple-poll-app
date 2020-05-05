@@ -44,6 +44,10 @@ app.post('/api/polls', (req,res) => {
     }
 })
 
+app.get('/polls', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'build', 'index.html'))    // allow page reload on poll page
+})
+
 app.get('/polls/:id', (req, res) => {
     res.sendFile(path.resolve(__dirname, 'build', 'index.html'))    // allow page reload on poll page
 })

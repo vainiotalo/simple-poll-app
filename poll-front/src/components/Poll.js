@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Link, Redirect } from 'react-router-dom'
+import '../styles/Poll.css'
 
 class Poll extends Component{
     constructor(props){
@@ -20,35 +21,46 @@ class Poll extends Component{
         this.setState({ redirect: true })
     }
 
+    
+
     render(){
         const poll = this.props.poll
-        const smiley = <span role="img" aria-label="smiley">&#128578;</span>
         if(poll === undefined){ return null } // allows page reload when user is on poll page
         if(this.state.redirect) return <Redirect to={`/polls/${poll.id}/r`} />;
         else return(
             <div className="poll">
-                <Link to="/"><button>back</button></Link>
-                <form method="POST" action={`/api/polls/${poll.id}`} onSubmit={this.saveAnswer}>
-                    <h2>{poll.question}{smiley}</h2>
-                    <table>
-                        <tbody>
-                            {poll.options.map((option, index) =>
-                            <tr key={index}>
-                                <td>
-                                    <label>
-                                        <input type="radio" value={option} id={index}
+                <form id="voteform" method="POST" action={`/api/polls/${poll.id}`} onSubmit={this.saveAnswer}>
+                    <div id="poll-table">
+                        <h2 id="poll-header">{poll.question}</h2>
+                        <table class="poll-table">
+                            <tbody>
+                                {poll.options.map((option, index) =>
+                                <tr key={index}>
+                                    <td>
+                                        {option}
+                                    </td>
+                                    <td>
+                                        <label>
+                                            <input
+                                                type="radio"
+                                                class="choice-button"
+                                                value={option}
+                                                id={index}
                                                 checked={this.state.selectedOption === option}
-                                                onChange={this.updateValue} />
-                                        {`  ${option}` }
-                                    </label>
-                                </td>
-                            </tr>)
-                            }
-                        </tbody>
-                    </table>
+                                                onChange={this.updateValue}
+                                            />
+                                        </label>
+                                    </td>
+                                </tr>)
+                                }
+                            </tbody>
+                        </table>
+                    </div>
                     <br></br>
-                    <button type="submit"><strong>Answer!</strong></button>
-                    <Link to={`/polls/${poll.id}/r`}><button>Results</button></Link>
+                    <div id="poll-button-container">
+                        <button class="answer-button" type="submit"><strong>Answer!</strong></button>
+                        <Link to={`/polls/${poll.id}/r`}><button class="result-button">Results</button></Link>
+                    </div>
                 </form>
             </div>
         )

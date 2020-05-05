@@ -1,0 +1,84 @@
+.poll {
+    display: flex;
+    background-color: rgb(40, 40, 40);
+    min-height: 100vh;
+    justify-content: center;
+    align-content: center;
+}
+
+#voteform {
+    flex: 0.3;
+    width: 100%;
+}
+
+#poll-table {
+    width: 100%;
+}
+
+#poll-header {
+    color: rgb(255, 254, 235);
+}
+
+.poll-table{
+    font-size: 20px;
+    background-color: rgb(255, 254, 235);
+    border: 2px solid rgb(255, 254, 235);
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.500);
+    border-collapse: collapse;
+}
+
+.poll-table tr{
+    border-bottom: 1px solid black;
+    line-height: 40px;
+}
+
+.poll-table tbody td:first-child{
+    width: 100%;
+    overflow-wrap: break-word;
+    padding: 5%;
+}
+
+.poll-table tbody td:nth-child(2){
+    width: 20%;
+    margin-right: 10%;
+    align-items: center;
+    padding-right: 5%;
+}
+
+.choice-button {
+    margin-right: 15px;
+}
+
+#poll-button-container{
+    display: flex;
+    justify-content: space-between;
+}
+
+.answer-button {
+    font-size: 20px;
+    padding: 20px;
+    padding-left: 20px;
+    background-color: rgb(255, 200, 61);
+    border-radius: 30px;
+    border: 1px solid rgb(180, 161, 55);
+}
+
+.result-button {
+    font-size: 20px;
+    text-indent: 18px;
+    padding: 20px;
+    padding-left: 10px;
+    padding-right: 32px;
+    background-color: rgb(143, 148, 160);
+    border-radius: 30px;
+    border: 1px solid rgb(100, 104, 112);
+    align-self: flex-end;
+}
+
+.answer-button:hover {
+    background-color: rgb(255, 235, 123);
+}
+
+.result-button:hover {
+    background-color: rgb(164, 169, 182);
+}

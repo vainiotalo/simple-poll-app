@@ -4,6 +4,7 @@ import ResultBar from './ResultBar'
 import '../styles/PollResults.css'
 
 const PollResults = ({ poll }) => {
+
     if(poll ===  undefined){        // allows page reload
         return null
     }
@@ -16,19 +17,17 @@ const PollResults = ({ poll }) => {
         }
     }
 
-    const smiley = <span role="img" aria-label="smiley">&#128578;</span>
-
     return(
         <div className="poll-results">
-            <Link to={`/polls/${poll.id}/`}><button>back</button></Link>
-                <h2>{poll.question}{smiley}</h2>
+            <div id="results-table">
+                <h2 id="results-header">{poll.question}</h2>
                 <table id="results">
                     <tbody>
                     {poll.options.map((option, index) =>
                     <tr key={index}>
                         <td id="result">
                             <p class="split-para"><strong>{option}</strong>
-                                <span>{`${poll.answerCount[index]} votes`}</span></p>
+                                <span>{/*`${poll.answerCount[index]} votes`*/}</span></p>
                             <ResultBar percentage={calcPercentage(poll.answerCount[index])} />
                         </td>
                         <td id="percentage">
@@ -37,6 +36,7 @@ const PollResults = ({ poll }) => {
                     }
                     </tbody>
                 </table>
+            </div>
         </div>
     )
 }

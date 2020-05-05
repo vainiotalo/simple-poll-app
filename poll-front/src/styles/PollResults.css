@@ -1,17 +1,41 @@
 .split-para      { display:block;margin:10px;}
 .split-para span { display:block;float:right;width:20%;margin-left:10px;}
 
-#results tr{
+.poll-results {
+    display: flex;
+    background-color: rgb(40, 40, 40);
+    min-height: 100vh;
+    justify-content: center;
+    align-content: center;
+}
+
+#results-header {
+    color: rgb(255, 254, 235);
+}
+
+#results-table {
+    flex: 0.3;
+    width: 100%;
+}
+
+#results {
+    background-color: rgb(255, 254, 235);
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.500);
+    padding: 5%;
+}
+
+#results tr {
     line-height: 20px;
 }
 
-#results td:first-child{
-    width: 350px;
-    text-align: justify
+#results td:first-child {
+    width: 100%;
+    text-align: justify;
 }
 
-#results td:nth-child(2){
-    width: 350px;
+#results td:nth-child(2) {
+    width: 20%;
+    margin-right: 10%;
     padding-left: 20px;
     padding-bottom: 5px;
     vertical-align: bottom;

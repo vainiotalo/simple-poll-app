@@ -1,13 +1,13 @@
 .result-bar {
     position: relative;
     height: 20px;
-    width: 350px;
+    width: 100%;
     border-radius: 50px;
     border: 2px solid #000000
 }
 
 .filler {
-    background: #FFC30B;
+    background: rgb(255, 200, 61);
     height: 100%;
     border-radius: inherit;
     transition: width .2s ease-in;

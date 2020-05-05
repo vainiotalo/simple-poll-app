@@ -11,7 +11,7 @@ const Header = () => {
                         <button id="header-button" type="button" onClick={void(0)}>Polls</button>
                     </Link>
                     <Link to={'/'}>
-                        <button id="header-button" type="button" onClick={void(0)}>Create Poll</button>
+                        <button id="header-button" type="button" onClick={void(0)}>Create A Poll</button>
                     </Link>
                 </div>
             </div>

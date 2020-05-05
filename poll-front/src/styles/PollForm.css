@@ -12,5 +12,14 @@
 }
 
 #form-button {
-    font-size: 30px;
+    font-size: 20px;
+    padding: 20px;
+    padding-left: 20px;
+    background-color: rgb(255, 200, 61);
+    border-radius: 30px;
+    border: 1px solid rgb(180, 161, 55);
+}
+
+#form-button:hover {
+    background-color: rgb(255, 235, 123);
 }

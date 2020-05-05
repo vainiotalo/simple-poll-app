@@ -47,7 +47,7 @@ const App = () => {
         })
     }
 
-    const match = useRouteMatch('/:id')
+    const match = useRouteMatch('/polls/:id')
     let poll = match
         ? polls.find(poll => poll.id === match.params.id)
         : null

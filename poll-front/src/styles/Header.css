@@ -1,6 +1,6 @@
 .Header {
     height: 100px;
-    background-color: rgb(80, 74, 74);
+    background-color: rgb(40, 40, 40);
     display: flex;
 }
 
@@ -23,8 +23,9 @@
     border: none;
     height: 60px;
     width: 150px;
+    transition: 0.3s;
 }
 
 #header-button:hover {
-    background-color: rgb(255, 252, 193);
+    background-color: rgb(255, 200, 61);
 }

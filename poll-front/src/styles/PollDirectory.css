@@ -1,4 +1,60 @@
-table{
-    width:30%;
-    text-align: left;
+.poll-directory {
+    display: flex;
+    flex: 1;
+    min-height: 100vh;
+    background-color: rgb(40, 40, 40);
+    justify-content: center;
+    align-content: center;
+}
+
+#poll-dir-table{
+    flex: 0.3;
+}
+
+#dir-header {
+    color: rgb(255, 254, 235);
+    font-size: 30px;
+}
+
+.dir-table {
+    font-size: 20px;
+    background-color: rgb(255, 254, 235);
+    border: 2px solid rgb(255, 254, 235);
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.500);
+    border-collapse: collapse;
+}
+
+.dir-table tr{
+    border-bottom: 1px solid black;
+    line-height: 40px;
+}
+
+.dir-table tbody td:first-child{
+    width: 100%;
+    overflow-wrap: break-word;
+    padding: 5%;
+}
+
+.dir-table tbody td:nth-child(2){
+    width: 20%;
+    margin-right: 10%;
+    align-items: center;
+    padding-right: 5%;
+}
+
+.del-button{
+    background-color: rgb(255, 225, 56);
+    border-radius: 30px;
+    border: none;
+    border: 1px solid rgb(180, 161, 55);
+    margin-right: 15px;
+}
+
+.del-button:hover{
+    background-color: rgb(255, 235, 123);
+}
+
+#no-polls {
+    color: rgb(255, 254, 235);
+    font-size: 20px;
 }
