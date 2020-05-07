@@ -1,27 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Sriracha&display=swap');
+
 .split-para      { display:block;margin:10px;}
 .split-para span { display:block;float:right;width:20%;margin-left:10px;}
 
 .poll-results {
     display: flex;
     background-color: rgb(40, 40, 40);
-    min-height: 100vh;
+    min-height: 92.2vh;
     justify-content: center;
     align-content: center;
 }
 
 #results-header {
+    font-family: 'Sriracha', cursive;
     color: rgb(255, 254, 235);
 }
 
 #results-table {
-    flex: 0.3;
-    width: 100%;
+    flex: 0 1 60vh;
+    margin-top: 80pt;
+    margin-bottom: 80pt;
+    padding-left: 5%;
+    padding-right: 5%;
 }
 
 #results {
     background-color: rgb(255, 254, 235);
     box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.500);
     padding: 5%;
+    padding-bottom: 10%;
 }
 
 #results tr {
@@ -30,11 +37,17 @@
 
 #results td:first-child {
     width: 100%;
+    font-family: 'Sriracha', cursive;
     text-align: justify;
+}
+
+#answer-count {
+    font-family: 'Calibri';
 }
 
 #results td:nth-child(2) {
     width: 20%;
+    font-family: 'Calibri';
     margin-right: 10%;
     padding-left: 20px;
     padding-bottom: 5px;

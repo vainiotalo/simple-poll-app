@@ -1,23 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sriracha&display=swap');
+
 .poll-directory {
     display: flex;
     flex: 1;
-    min-height: 100vh;
+    min-height: 92.2vh;
     background-color: rgb(40, 40, 40);
     justify-content: center;
     align-content: center;
 }
 
 #poll-dir-table{
-    flex: 0.3;
+    flex: 0 1 60vh;
+    margin-top: 80pt;
+    margin-bottom: 80pt;
+    padding-left: 5%;
+    padding-right: 5%;
 }
 
 #dir-header {
     color: rgb(255, 254, 235);
+    font-family: 'Permanent Marker', cursive;
     font-size: 30px;
 }
 
 .dir-table {
     font-size: 20px;
+    font-family: 'Sriracha', cursive;
     background-color: rgb(255, 254, 235);
     border: 2px solid rgb(255, 254, 235);
     box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.500);
@@ -43,6 +52,7 @@
 }
 
 .del-button{
+    font-family: 'Calibri';
     background-color: rgb(255, 225, 56);
     border-radius: 30px;
     border: none;
@@ -56,5 +66,6 @@
 
 #no-polls {
     color: rgb(255, 254, 235);
+    font-family: 'Sriracha', cursive;
     font-size: 20px;
 }

@@ -6,9 +6,8 @@ const PollForm = ({ handleSubmit, handleChange, handleArray, inputObject }) => {
     return(
         <form onSubmit={handleSubmit}>
             <div className="Poll" id="pollform">
-                <input name="question" id="input-field" value={inputObject.question}
+                <input name="question" id="question-field" value={inputObject.question}
                             onChange={handleChange} placeholder="Enter your question"/>
-                <br /><br /><br /><br />
                 {
                     Array.from(inputObject.options).map((option, index) => {
                         return(
@@ -19,9 +18,7 @@ const PollForm = ({ handleSubmit, handleChange, handleArray, inputObject }) => {
                         )
                     })
                 }
-                <br /><br />
                 <button type="submit" id="form-button">Create Poll</button>
-                <br /><br />
             </div>
         </form>
     )

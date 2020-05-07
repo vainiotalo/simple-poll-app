@@ -40,4 +40,5 @@ Back end cannot be ran without the local `.env` variable. Code can be inspected 
 
 ### Tasks to be done
 
-- Implement CSS styling (app is ugly)
+- Implement user authentication
+- Implement the ability sort polls in the poll directory, e.g. by date

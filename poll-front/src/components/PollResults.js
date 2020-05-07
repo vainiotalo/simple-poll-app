@@ -1,10 +1,8 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { useState, useEffect } from 'react'
 import ResultBar from './ResultBar'
 import '../styles/PollResults.css'
 
 const PollResults = ({ poll }) => {
-
     if(poll ===  undefined){        // allows page reload
         return null
     }
@@ -27,7 +25,7 @@ const PollResults = ({ poll }) => {
                     <tr key={index}>
                         <td id="result">
                             <p class="split-para"><strong>{option}</strong>
-                                <span>{/*`${poll.answerCount[index]} votes`*/}</span></p>
+                                <span id="answer-count">{`${poll.answerCount[index]} votes`}</span></p>
                             <ResultBar percentage={calcPercentage(poll.answerCount[index])} />
                         </td>
                         <td id="percentage">

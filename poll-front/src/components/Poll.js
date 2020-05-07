@@ -5,7 +5,7 @@ import '../styles/Poll.css'
 class Poll extends Component{
     constructor(props){
         super(props)
-        this.state = { selectedOption: '', selectedIndex: 0, redirect: false }
+        this.state = { selectedOption: '', selectedIndex: null, redirect: false }
     }
 
     updateValue = (event) => {
@@ -17,14 +17,16 @@ class Poll extends Component{
 
     saveAnswer = (event) => {
         event.preventDefault()
-        this.props.onAnswer(this.props.poll, this.state.selectedIndex)
-        this.setState({ redirect: true })
+        if(this.state.selectedIndex === null) {
+            alert("Please pick an answer")
+        } else {
+            this.props.onAnswer(this.props.poll, this.state.selectedIndex)
+            this.setState({ redirect: true })
+        }
     }
 
-    
-
     render(){
-        const poll = this.props.poll
+        const poll = this.props.poll;
         if(poll === undefined){ return null } // allows page reload when user is on poll page
         if(this.state.redirect) return <Redirect to={`/polls/${poll.id}/r`} />;
         else return(

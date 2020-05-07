@@ -1,3 +1,12 @@
+@keyframes slideInFromLeft {
+    0% {
+      width: 0%;
+    }
+    100% {
+      width: width;
+    }
+}
+
 .result-bar {
     position: relative;
     height: 20px;
@@ -10,5 +19,5 @@
     background: rgb(255, 200, 61);
     height: 100%;
     border-radius: inherit;
-    transition: width .2s ease-in;
+    animation: .2s ease-out 0s 1 slideInFromLeft;
 }

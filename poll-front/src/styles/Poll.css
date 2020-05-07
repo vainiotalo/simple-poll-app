@@ -1,14 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Sriracha&display=swap');
+
 .poll {
     display: flex;
     background-color: rgb(40, 40, 40);
-    min-height: 100vh;
+    min-height: 92.2vh;
     justify-content: center;
     align-content: center;
 }
 
 #voteform {
-    flex: 0.3;
-    width: 100%;
+    flex: 0 1 60vh;
+    margin-top: 80pt;
+    margin-bottom: 80pt;
+    padding-left: 5%;
+    padding-right: 5%;
 }
 
 #poll-table {
@@ -17,10 +22,12 @@
 
 #poll-header {
     color: rgb(255, 254, 235);
+    font-family: 'Sriracha', cursive;
 }
 
 .poll-table{
     font-size: 20px;
+    font-family: 'Sriracha', cursive;
     background-color: rgb(255, 254, 235);
     border: 2px solid rgb(255, 254, 235);
     box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.500);
@@ -56,6 +63,7 @@
 
 .answer-button {
     font-size: 20px;
+    font-family: 'Calibri';
     padding: 20px;
     padding-left: 20px;
     background-color: rgb(255, 200, 61);
@@ -65,6 +73,7 @@
 
 .result-button {
     font-size: 20px;
+    font-family: 'Calibri';
     text-indent: 18px;
     padding: 20px;
     padding-left: 10px;

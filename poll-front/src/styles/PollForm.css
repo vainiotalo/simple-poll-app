@@ -1,10 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Sriracha&display=swap');
+
 #pollform {
     background-color: rgb(255, 254, 235);
 }
 
+#question-field {
+    width: 100%;
+    font-size: 20px;
+    font-family: 'Sriracha', cursive;
+    background-color: rgb(255, 254, 235);
+    border: none;
+    border-bottom: 1px solid black;
+    line-height: 50px;
+    margin-bottom: 40pt;
+}
+
 #input-field {
     width: 100%;
-    font-size: 30px;
+    font-size: 20px;
+    font-family: 'Sriracha', cursive;
     background-color: rgb(255, 254, 235);
     border: none;
     border-bottom: 1px solid black;
@@ -12,9 +26,12 @@
 }
 
 #form-button {
+    font-family: 'Calibri';
     font-size: 20px;
     padding: 20px;
     padding-left: 20px;
+    margin-top: 40pt;
+    margin-bottom: 20pt;
     background-color: rgb(255, 200, 61);
     border-radius: 30px;
     border: 1px solid rgb(180, 161, 55);

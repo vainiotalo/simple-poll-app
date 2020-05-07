@@ -1,25 +1,38 @@
-.main {
+#main-header {
     display: flex;
-    min-height: 100vh;
-    flex: 1;
     justify-content: center;
-    align-content: center;
+    align-items: center;
+    flex-direction: column;
     background-color: rgb(40, 40, 40);
 }
 
-#pollmaker-background {
-    flex: 0.4;
-    padding-right: 8%;
-    margin-top: 10%;
+#main-header-txt {
+    color: rgb(255, 254, 235);
+    font-family: 'Calibri Light';
+    font-size: 20px;
+}
+
+.main {
+    display: flex;
+    min-height: 74.4vh;
+    flex: 1;
+    background-color: rgb(40, 40, 40);
     justify-content: center;
 }
 
+#pollmaker-background {
+    flex: 0 1 60vh;
+    margin-top: 80pt;
+    margin-bottom: 80pt;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
 #pollmaker {
-    width: 100%;
+    width: 100;
     padding-left: 12%;
     padding-right: 12%;
     padding-top: 10%;
-    justify-content: center;
     background-color: rgb(255, 254, 235);
     box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.500);
 }
