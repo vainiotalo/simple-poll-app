@@ -4,7 +4,7 @@
 .poll-directory {
     display: flex;
     flex: 1;
-    min-height: 92.2vh;
+    min-height: 50vh;
     background-color: rgb(40, 40, 40);
     justify-content: center;
     align-content: center;
@@ -12,7 +12,7 @@
 
 #poll-dir-table{
     flex: 0 1 60vh;
-    margin-top: 80pt;
+    margin-top: 5%;
     margin-bottom: 80pt;
     padding-left: 5%;
     padding-right: 5%;

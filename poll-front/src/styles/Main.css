@@ -1,3 +1,8 @@
+.app-background {
+    min-height: 100vh;
+    background-color: rgb(40, 40, 40);
+}
+
 #main-header {
     display: flex;
     justify-content: center;
@@ -14,7 +19,7 @@
 
 .main {
     display: flex;
-    min-height: 74.4vh;
+    min-height: 50vh;
     flex: 1;
     background-color: rgb(40, 40, 40);
     justify-content: center;
@@ -22,7 +27,7 @@
 
 #pollmaker-background {
     flex: 0 1 60vh;
-    margin-top: 80pt;
+    padding-top: 5%;
     margin-bottom: 80pt;
     padding-left: 5%;
     padding-right: 5%;

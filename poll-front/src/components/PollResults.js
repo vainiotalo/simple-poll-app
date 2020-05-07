@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import ResultBar from './ResultBar'
 import '../styles/PollResults.css'
 
@@ -24,8 +24,9 @@ const PollResults = ({ poll }) => {
                     {poll.options.map((option, index) =>
                     <tr key={index}>
                         <td id="result">
-                            <p class="split-para"><strong>{option}</strong>
-                                <span id="answer-count">{`${poll.answerCount[index]} votes`}</span></p>
+                            <div id="answer-info">
+                                <strong>{option}</strong><p>{`${poll.answerCount[index]} votes`}</p>
+                            </div>
                             <ResultBar percentage={calcPercentage(poll.answerCount[index])} />
                         </td>
                         <td id="percentage">

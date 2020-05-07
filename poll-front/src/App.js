@@ -53,7 +53,7 @@ const App = () => {
         : null
 
     return(
-        <>
+        <div className="app-background">
         <Header />
             <Switch>
                 <Route path="/polls/:id/r"><PollResults poll={poll} /></Route>
@@ -62,7 +62,7 @@ const App = () => {
                 <Route path="/"><Main polls={polls} onSubmit={updatePolls}/> </Route>
                 <Route render={() => <Redirect to="/" />} />
             </Switch>
-        </>
+        </div>
     )
 }
 

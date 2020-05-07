@@ -9,7 +9,7 @@ class Main extends Component{
         return(
             <>
             <div id="main-header">
-                <img src={logo} alt="Simple Poll" />
+                <img src={logo} alt="Simple Poll" style={{width: '30vh', height: '70%'}}/>
                 <p id="main-header-txt">Polls made quick and easy.</p>
             </div>
             <div className="main">

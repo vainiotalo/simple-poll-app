@@ -1,12 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Sriracha&display=swap');
 
-.split-para      { display:block;margin:10px;}
-.split-para span { display:block;float:right;width:20%;margin-left:10px;}
-
 .poll-results {
     display: flex;
     background-color: rgb(40, 40, 40);
-    min-height: 92.2vh;
+    min-height: 50vh;
     justify-content: center;
     align-content: center;
 }
@@ -18,7 +15,7 @@
 
 #results-table {
     flex: 0 1 60vh;
-    margin-top: 80pt;
+    margin-top: 5%;
     margin-bottom: 80pt;
     padding-left: 5%;
     padding-right: 5%;
@@ -37,12 +34,9 @@
 
 #results td:first-child {
     width: 100%;
+    padding-top: 20pt;
     font-family: 'Sriracha', cursive;
     text-align: justify;
-}
-
-#answer-count {
-    font-family: 'Calibri';
 }
 
 #results td:nth-child(2) {
@@ -52,4 +46,14 @@
     padding-left: 20px;
     padding-bottom: 5px;
     vertical-align: bottom;
+}
+
+#answer-info {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Calibri';
+}
+
+#answer-count {
+    font-family: 'Calibri';
 }
