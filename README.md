@@ -8,8 +8,15 @@ This is a simple full stack poll app that was created with React, Node.js, Expre
 
 Other features include:
 - dynamically updated option fields when creating a poll
-- poll results shown as percentage bars
+- poll results shown as animated percentage bars
 - to be continued...
+
+### Tasks to be done
+
+- Fix logo and fonts not displaying on some devices
+- Implement user authentication
+- Implement the ability sort polls in the poll directory, e.g. by date
+- Make app more mobile friendly
 
 ### Why was this app created?
 
@@ -36,12 +43,4 @@ npm start
 
 #### Back end:
 
-Back end cannot be ran without the local `.env` variable. Code can be inspected though. Back end is connected to a production build of the front end.
-
-
-### Tasks to be done
-
-- Fix logo and fonts not displaying on some devices
-- Implement user authentication
-- Implement the ability sort polls in the poll directory, e.g. by date
-- Make app more mobile friendly
+Back end cannot be run without the local `.env` variable. Code can be inspected though. Back end is connected to a production build of the front end.

@@ -3,42 +3,47 @@
     background-color: rgb(40, 40, 40);
 }
 
-#main-header {
+.Main {
     display: flex;
+    flex-direction: column;
+}
+
+#logo {
+    display: flex;
+    max-height: 30vw;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     background-color: rgb(40, 40, 40);
 }
 
-#main-header-txt {
-    color: rgb(255, 254, 235);
-    font-family: 'Calibri Light';
-    font-size: 20px;
+#logo-txt {
+    font-family: 'Open Sans';
+    font-size: calc(12px + 0.3vw);
+    color: rgb(255, 255, 255);
 }
 
-.main {
+#pollmaker-container {
     display: flex;
-    min-height: 50vh;
     flex: 1;
-    background-color: rgb(40, 40, 40);
     justify-content: center;
+    padding-bottom: 5vh;
+    background-color: rgb(40, 40, 40);
 }
 
 #pollmaker-background {
-    flex: 0 1 60vh;
-    padding-top: 5%;
-    margin-bottom: 80pt;
+    flex: 60vw;
+    max-width: calc(400px + 30vw);
+    margin-top: 5vw;
     padding-left: 5%;
     padding-right: 5%;
 }
 
 #pollmaker {
-    width: 100;
     padding-left: 12%;
     padding-right: 12%;
     padding-top: 10%;
-    background-color: rgb(255, 254, 235);
     box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.500);
+    background-color: rgb(246, 232, 177);
 }
 

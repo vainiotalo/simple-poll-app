@@ -5,7 +5,7 @@ const PollForm = ({ handleSubmit, handleChange, handleArray, inputObject }) => {
     
     return(
         <form onSubmit={handleSubmit}>
-            <div className="Poll" id="pollform">
+            <div id="pollform">
                 <input name="question" id="question-field" value={inputObject.question}
                             onChange={handleChange} placeholder="Enter your question"/>
                 {

@@ -1,3 +1,32 @@
 {
-  "polls": []
+  "polls": [
+    {
+      "question": "Test question 1",
+      "options": [
+        "1",
+        "2",
+        "3"
+      ],
+      "answerCount": [
+        0,
+        0,
+        0
+      ],
+      "id": 1
+    },
+    {
+      "question": "Test question 2",
+      "options": [
+        "1",
+        "2",
+        "3"
+      ],
+      "answerCount": [
+        0,
+        0,
+        0
+      ],
+      "id": 2
+    }
+  ]
 }

@@ -25,7 +25,7 @@ const PollResults = ({ poll }) => {
                     <tr key={index}>
                         <td id="result">
                             <div id="answer-info">
-                                <strong>{option}</strong><p>{`${poll.answerCount[index]} votes`}</p>
+                                <strong id="info-option">{option}</strong><p>{`${poll.answerCount[index]} votes`}</p>
                             </div>
                             <ResultBar percentage={calcPercentage(poll.answerCount[index])} />
                         </td>

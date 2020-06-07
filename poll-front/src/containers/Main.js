@@ -1,25 +1,25 @@
 import React, { Component } from 'react'
 import PollMaker from '../components/PollMaker'
 import '../styles/Main.css'
-import logo from './simplepoll.svg'
+import { ReactComponent as SimpleLogo } from './simplepoll.svg'
 
 class Main extends Component{
 
     render(){
         return(
-            <>
-            <div id="main-header">
-                <img src={logo} alt="Simple Poll" style={{width: '30vh', height: '70%'}}/>
-                <p id="main-header-txt">Polls made quick and easy.</p>
-            </div>
             <div className="main">
-                <div id="pollmaker-background">
-                    <div id="pollmaker">
-                        <PollMaker onSubmit={this.props.onSubmit}/>
+                <div id="logo">
+                    <SimpleLogo style={{width: '40vw'}} />
+                    <p id="logo-txt">Polls made quick and easy.</p>
+                </div>
+                <div id="pollmaker-container">
+                    <div id="pollmaker-background">
+                        <div id="pollmaker">
+                            <PollMaker onSubmit={this.props.onSubmit}/>
+                        </div>
                     </div>
                 </div>
             </div>
-            </>
         )
     }
 }

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Link, Redirect } from 'react-router-dom'
+import Checkbox from './Checkbox'
 import '../styles/Poll.css'
 
 class Poll extends Component{
@@ -26,7 +27,7 @@ class Poll extends Component{
     }
 
     render(){
-        const poll = this.props.poll;
+        const poll = this.props.poll
         if(poll === undefined){ return null } // allows page reload when user is on poll page
         if(this.state.redirect) return <Redirect to={`/polls/${poll.id}/r`} />;
         else return(
@@ -34,7 +35,7 @@ class Poll extends Component{
                 <form id="voteform" method="POST" action={`/api/polls/${poll.id}`} onSubmit={this.saveAnswer}>
                     <div id="poll-table">
                         <h2 id="poll-header">{poll.question}</h2>
-                        <table class="poll-table">
+                        <table className="poll-table">
                             <tbody>
                                 {poll.options.map((option, index) =>
                                 <tr key={index}>
@@ -42,15 +43,16 @@ class Poll extends Component{
                                         {option}
                                     </td>
                                     <td>
-                                        <label>
+                                        <label id="checkbox">
                                             <input
                                                 type="radio"
-                                                class="choice-button"
+                                                className="choice-button"
                                                 value={option}
                                                 id={index}
                                                 checked={this.state.selectedOption === option}
                                                 onChange={this.updateValue}
                                             />
+                                            <Checkbox selectedOption={this.state.selectedOption} option={option} />
                                         </label>
                                     </td>
                                 </tr>)
@@ -60,8 +62,8 @@ class Poll extends Component{
                     </div>
                     <br></br>
                     <div id="poll-button-container">
-                        <button class="answer-button" type="submit"><strong>Answer!</strong></button>
-                        <Link to={`/polls/${poll.id}/r`}><button class="result-button">Results</button></Link>
+                        <button id="answer-button" type="submit"><strong>Answer!</strong></button>
+                        <Link to={`/polls/${poll.id}/r`}><button id="result-button">Results</button></Link>
                     </div>
                 </form>
             </div>
