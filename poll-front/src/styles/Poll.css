@@ -22,6 +22,7 @@
 #poll-header {
     color: rgb(255, 255, 255);
     font-family: 'Sriracha', cursive;
+    overflow-wrap: anywhere;
 }
 
 .poll-table{
@@ -40,8 +41,8 @@
 
 .poll-table tbody td:first-child{
     width: 100%;
-    overflow-wrap: break-word;
     padding: 5%;
+    overflow-wrap: anywhere;
 }
 
 .poll-table tbody td:nth-child(2){

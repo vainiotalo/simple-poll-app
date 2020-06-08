@@ -38,7 +38,7 @@
 
 #dir-table tbody td:first-child{
     width: 100%;
-    overflow-wrap: break-word;
+    overflow-wrap: anywhere;
     padding: 5%;
 }
 
@@ -51,11 +51,17 @@
 
 .del-button{
     /*font-family: 'Open Sans';*/
+    display: block;
     border-radius: 5px;
     margin-right: 2rem;
     border: none;
+    width: 2rem;
+    height: 2rem;
     border: 1px solid rgb(180, 161, 55);
+    background: url(trash.svg);
+    background-size: 2rem 2rem;
     background-color: rgb(255, 200, 61);
+    padding: 1rem;
     outline: none;
     cursor: pointer;
 }

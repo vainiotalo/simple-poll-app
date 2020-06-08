@@ -41,14 +41,15 @@ class PollMaker extends Component{
                 if(optionsCheck){
                     alert("Please enter at least two unique answer options")
                 } else { 
-                    if(window.confirm("Save this poll?")){
+                    //if(window.confirm("Save this poll?")){
                         pollService
                             .create(pollObject)
                             .then(response => {
                                 this.props.onSubmit(response.data)
                                 resetState()
+                                alert("Poll saved!")
                             })  
-                    }   
+                    //}   
                 }
         }
     }

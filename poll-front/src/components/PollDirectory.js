@@ -1,7 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import '../styles/PollDirectory.css'
-import { ReactComponent as Trash } from './trash.svg'
 
 const PollDirectory = ({ polls, onDelete }) => {
     if (polls.length > 0) {
@@ -15,9 +14,7 @@ const PollDirectory = ({ polls, onDelete }) => {
                             <tr key={poll.id + ''}>
                                 <td><Link to={`/polls/${poll.id}`}>{poll.question}</Link></td>
                                 <td>
-                                    <button className="del-button" onClick={onDelete} id={poll.id}>
-                                        <Trash style={{width: '1.5rem', height: '2rem'}}/>
-                                    </button>
+                                    <button className="del-button" onClick={onDelete} id={poll.id}></button>
                                 </td>
                         </tr>)
                         }

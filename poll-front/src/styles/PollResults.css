@@ -8,6 +8,7 @@
 
 #results-header {
     font-family: 'Sriracha', cursive;
+    overflow-wrap: anywhere;
     color: rgb(255, 255, 255);
 }
 
@@ -36,6 +37,11 @@
     padding-top: 20pt;
     font-family: 'Sriracha', cursive;
     text-align: justify;
+}
+
+#info-option {
+    overflow-wrap: anywhere;
+    margin-right: 1rem;
 }
 
 #results td:nth-child(2) {
